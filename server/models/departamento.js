@@ -20,7 +20,7 @@ let departamentoSchema = new Schema({
     },
     id_jefe_de_area: {
         type: Schema.Types.ObjectId,
-        ref: 'Empleado'
+        ref: 'Usuario'
     }
 
 });
