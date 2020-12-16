@@ -1,43 +1,41 @@
 const mongoose = require('mongoose');
-const { unique } = require('underscore');
 const Schema = mongoose.Schema;
 
-let usuarioSchema = new Schema({
-    nombre:{
-        type: String,
-        required: [true, 'Nombre requerido']
-    },
-    primer_apellido:{
-        type: String,
-        required: [true, 'Primer apellido requerido']
-    },
-    segundo_apellido:{
-        type: String,
-        required: [true, 'segundo apellido requerido']
-    },
-    edad:{
-        type: Number,
-        required: [true, 'Edad requerida']
-    },
-    curp:{
-        type: String,
-        required: [true, 'CURP requerida'],
-        unique: true
-    },
-    telefono:{
-        type: Number,
-        required: [true, 'telefon requerido']
-    },
-    mail:{
-        type: String,
-        required: [true, 'El email es requerido'],
-        unique: true
-    },
-    activo:{
-        type: Boolean,
-        default: true
-    }
+  let usuarioSchema = new Schema({
+                    nombre:{
+                        type: String,
+                        required: [true, 'El nombre es obligatorio']
+                    },
+                    primer_apellido:{
+                        type: String,
+                        required: [true, 'El primer apellido es obligatorio']
+                    },
+                    segundo_apellido:{
+                        type: String,
+                        required: [true, 'El segundo apellido es obligatorio']
+                    },
+                    edad:{
+                        type: Number,
+                        required: [true, 'La edad es obligatoria']
+                    },
+                    curp:{
+                        type: String,
+                        required: [true, 'La CURP es obligatoria'],
+                        unique: true
+                    },
+                    telefono:{
+                        type: Number,
+                        required: [true, 'El telefono es obligatorio']
+                    },
+                    mail:{
+                        type: String,
+                        required: [true, 'El mail es obligatorio'],
+                        unique: true
+                    },
+                    activo:{
+                        type: Boolean,
+                        default: true
+                    }
+        });
 
-});
-
-module.exports = mongoose.model('Empleado', usuarioSchema);
+module.exports = mongoose.model('Usuario', usuarioSchema);

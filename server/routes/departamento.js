@@ -1,3 +1,6 @@
+
+
+
 const express = require('express');
 const _ = require('underscore');
 const app = express();
@@ -15,7 +18,7 @@ app.get('/departamento', (req, res) => {
         if(err){
             return res.status(400).json({
                 ok: false,
-                msg: 'Ocurrio un error al listar los departamentos',
+                msg: 'Error al listar departamentos',
                 err
             });
         }
@@ -41,13 +44,13 @@ app.post('/departamento',(req, res)=>{
         if(err){
             return res.status(400).json({
                 ok: false,
-                msg: 'Error al insertar un departamento',
+                msg: 'Error al insertar departamento',
                 err
             });
         }
         res.json({
             ok: true,
-            msg: 'Departamentos insertado con exito',
+            msg: 'Departamento insertado ',
             depDB
         });
     });
@@ -62,13 +65,13 @@ app.put('/departamento/:id', (req, res)=>{
         if(err){
             return res.status(400).json({
                 ok: false,
-                msg: 'Ocurrio un error al momento de actulizar',
+                msg: 'Ocurrio un error al actulizar',
                 err
             });
         }
         res.json({
             ok: true,
-            msg: 'El departamento fue actulizado con exito',
+            msg: 'El departamento fue actulizado',
             depDB
         });
     });
