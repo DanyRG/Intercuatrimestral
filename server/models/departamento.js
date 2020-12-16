@@ -17,6 +17,10 @@ let departamentoSchema = new Schema({
     activo: {
         type: Boolean,
         default: true
+    },
+    id_jefe_de_area: {
+        type: Schema.Types.ObjectId,
+        ref: 'Empleado'
     }
 
 });
